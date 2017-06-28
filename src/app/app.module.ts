@@ -1,13 +1,19 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { MenuComponent } from './menu/menu.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { FooterComponent } from './footer/footer.component';
-import { ContentComponent } from './content/content.component';
-import { StockManagerComponent } from './stock/stock-manager/stock-manager.component';
+import {AppComponent} from './app.component';
+import {HeaderComponent} from './header/header.component';
+import {MenuComponent} from './menu/menu.component';
+import {SidebarComponent} from './sidebar/sidebar.component';
+import {FooterComponent} from './footer/footer.component';
+import {ContentComponent} from './content/content.component';
+import {StockManagerComponent} from './stock/stock-manager/stock-manager.component';
+import {StarsComponent} from './stars/stars.component';
+import {RouterModule, Routes} from "@angular/router";
+
+const routeConfig: Routes = [
+  {path: 'stock', component: StockManagerComponent}
+];
 
 @NgModule({
   declarations: [
@@ -17,13 +23,16 @@ import { StockManagerComponent } from './stock/stock-manager/stock-manager.compo
     SidebarComponent,
     FooterComponent,
     ContentComponent,
-    StockManagerComponent
+    StockManagerComponent,
+    StarsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(routeConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 
-export class AppModule { }
+export class AppModule {
+}
