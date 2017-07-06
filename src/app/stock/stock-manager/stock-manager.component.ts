@@ -21,7 +21,6 @@ export class StockManagerComponent implements OnInit {
   ngOnInit() {
 
     this.stocks = this.stockService.getStocks();
-    debugger;
     this.nameFilter.valueChanges
       .debounceTime(500)
       .subscribe(value => this.keywork = value);

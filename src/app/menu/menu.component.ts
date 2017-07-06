@@ -31,3 +31,7 @@ export class Menu {
               public link: string) {
   }
 }
+
+export class Menu1 {
+  name: 'shumin';
+}

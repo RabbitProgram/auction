@@ -13,17 +13,19 @@ export class StockFormComponent implements OnInit {
 
 
   constructor(private routerInfo: ActivatedRoute, private  stockService: StockService,
-  private router:Router) {
+              private router: Router) {
   }
 
   ngOnInit() {
     let stockId = this.routerInfo.snapshot.params['id'];
     this.stock = this.stockService.getStock(stockId);
   }
-  cancel(){
+
+  cancel() {
     this.router.navigateByUrl('/stock');
   }
-  save(){
+
+  save() {
     this.router.navigateByUrl('/stock');
   }
 
